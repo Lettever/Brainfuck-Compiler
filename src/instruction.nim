@@ -1,7 +1,7 @@
 import std/strformat
 
 type
-    InstructionType = enum
+    InstructionType* = enum
         Write,
         Read,
         Move,
@@ -9,11 +9,11 @@ type
         LoopStart,
         LoopEnd
     
-    Instruction = object
-        `type`: InstructionType
-        n: int
+    Instruction* = object
+        `type`*: InstructionType
+        n*: int
 
-proc processInput(input: string): seq[Instruction] =
+proc processInput*(input: string): seq[Instruction] =
     result = newSeq[Instruction]()
     var
         j = 0
