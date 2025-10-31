@@ -44,7 +44,7 @@ proc main() =
     of "c":
         let code = processInput(text)
         writeFile("out.asm", compile(code))
-        let cmdResult = execShellCmd("nasm -f elf64 out.asm -o out.o && ld out.o -o out && rm out.o")
+        let cmdResult = execShellCmd("nasm -f elf64 out.asm -o out.o && ld out.o -o out && rm out.o out.asm")
         if cmdResult == 0:
             echo "Created ./out file"
         else:
