@@ -57,12 +57,11 @@ proc processInput*(input: string): seq[Instruction] =
         
         else: inc j
 
-proc run*(input: string) =
-    let instructions = processInput(input)
+proc bytecode*(instructions: seq[Instruction]) =
     var
         ip = 0
         mem: array[30000, byte]
-        dp = mem.len div 2
+        dp = 0
 
     while ip < instructions.len:
         let (t, n) = instructions[ip].toTuple()

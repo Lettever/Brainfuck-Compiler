@@ -1,4 +1,4 @@
-proc run*(input: string) =
+proc interp*(input: string) =
     var
         ip = 0
         mem: array[30000, byte]

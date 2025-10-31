@@ -26,9 +26,3 @@ proc transpile*(instructions: seq[Instruction]): string =
         of LoopEnd:
             result &= "}\n"
     result &= "return 0;\n}"
-
-let
-    path = "./examples/hello.bf"
-    code = processInput(readFile(path))
-
-writeFile("out.c", transpile(code))

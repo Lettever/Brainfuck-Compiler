@@ -80,9 +80,3 @@ read_char:
     syscall
     ret
 """
-
-let
-    path = "./examples/hello.bf"
-    code = processInput(readFile(path))
-
-writeFile("out.asm", compile(code))
