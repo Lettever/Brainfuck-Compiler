@@ -1,4 +1,5 @@
 * [x] Interperter
 * [x] Interperter with instructions
-* [ ] Transpiled to C
-* [ ] Compile to Assembly
+* [x] Transpiled to C
+* [x] Compile to Assembly
+* [ ] Do command line parsing

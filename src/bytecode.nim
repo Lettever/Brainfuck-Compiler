@@ -13,6 +13,9 @@ type
         `type`*: InstructionType
         n*: int
 
+proc toTuple*(instr: Instruction): (InstructionType, int) =
+    return (instr.`type`, instr.n)
+
 proc processInput*(input: string): seq[Instruction] =
     result = newSeq[Instruction]()
     var
@@ -62,9 +65,8 @@ proc run*(input: string) =
         dp = mem.len div 2
 
     while ip < instructions.len:
-        let
-            t = instructions[ip].`type`
-            n = instructions[ip].n
+        let (t, n) = instructions[ip].toTuple()
+        
         case t:
         of Write:
             for i in 1 .. n: write(stdout, mem[dp].char)

@@ -1,7 +1,7 @@
 import std/[os, times, strformat]
 import src/[
     interpreter as interp,
-    instruction as instr,
+    bytecode as byco,
     #transpiler,
     #compiler
 ]
@@ -22,7 +22,7 @@ proc main() =
     var duration = getTime() - start
     echo &"naive {filePath}: Execution time: {duration.inMicroseconds} microseconds ({duration.inNanoseconds} ns)"
     start = getTime()
-    instr.run(code)
+    byco.run(code)
     duration = getTime() - start
     echo &"optmized {filePath}: Execution time: {duration.inMicroseconds} microseconds ({duration.inNanoseconds} ns)"
     echo ""

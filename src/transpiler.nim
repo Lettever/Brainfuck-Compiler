@@ -1,4 +1,4 @@
-import instruction
+import bytecode
 import std/strformat
 
 proc transpile*(instructions: seq[Instruction]): string =
